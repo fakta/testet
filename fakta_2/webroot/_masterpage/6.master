@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" %>
+<%@ Register TagPrefix="spbase" NameSpace="spbase.controls" Assembly="spbase" %>
+<%@ Import Namespace="spbase.utils"%>
+<script runat="server">
+    string _approot=Globals.ApplicationRoot;
+</script>
+<%@ Register TagPrefix="m_ctrl1" NameSpace="spmodules.content" Assembly="spmodules"%><%@ Register TagPrefix="m_ctrl2" NameSpace="spmodules.post" Assembly="spmodules"%>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head><spbase:Title runat="server" id="title" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="<%=_approot%>webroot/_design/less/client/styles.css" />
+
+	
+	<!--Fetch HTML5 shiv from google-->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="<%=_approot%>respond.min.js"></script>
+	<![endif]-->
+
+
+	<spbase:CSS runat="server" />
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js" charset="utf-8"></script> 
+	<script type="text/javascript" src="<%=_approot%>jquery.touchwipe.min.js" charset="utf-8"></script>
+
+
+	<spbase:ResourceInclude runat="server" id="res" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <spbase:IncludeHeader runat="server" />  
+</head>
+<body class="news-single mp-6 p-<%=Globals.PageSettings.id%><%=Globals.LoginClass%>">
+	<input type="hidden" id="approot" name="approot" value="<%=_approot%>" />
+    <spbase:MyForm id="form1" runat="server">
+    <m_ctrl1:ContentElement runat="server" ContentId="2"/><section class="area gray"><div class="container"><div class="content-wrapper"><div class="main"><div class="content"><asp:ContentPlaceHolder runat="server" id="content_ph_1"></asp:ContentPlaceHolder></div></div><aside class="sidebar"><div class="content"><m_ctrl2:Latest runat="server" PostType="1" Thumbnail="0x0" PictureSize="0x0" Category="5" SkinFilename="news-sidebar.ascx"/></div></aside></div></div></section>  <m_ctrl1:ContentElement runat="server" ContentId="3"/>
+    </spbase:MyForm>
+    <spbase:SimpleModePrepare runat="server" /> 
+    <spbase:ResourceIncludeFooter runat="server" />
+
+</body>
+</html>

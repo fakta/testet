@@ -1,0 +1,46 @@
+//Footer area
+
+.site-footer {
+  padding: @line-height-computed * 2 0;
+  background: @gray-darker;
+  font-size: @font-size-small;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  a {
+    color: @gray-lighter;
+  }
+
+  hr {
+    border-top: 3px solid @gray-lighter;
+  }
+}
+.info {
+  .make-row();
+  color: @gray-lighter;
+  list-style: none;
+  padding: 0;
+
+  > li {
+    .make-xs-column(6);
+    .make-md-column(3);
+  }
+}
+
+.logo-footer {
+  float: left;
+
+  img {
+    height: @line-height-computed;
+  }
+}
+.sp-logo-footer {
+  float: right;
+
+  img {
+    height: @line-height-computed;
+  }
+}

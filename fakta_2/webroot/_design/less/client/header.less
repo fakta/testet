@@ -1,0 +1,60 @@
+.navbar {
+  .navbar-fixed-top;
+  background: @brand-primary;
+
+  .navbar-toggle {
+    border-color: none;
+    &:hover,
+    &:focus {
+      background-color: none;
+    }
+    .icon-bar {
+      background-color: @white;
+    }
+  }
+}
+.home .navbar {
+  background: transparent;
+}
+
+
+.navbar .navbar-nav {
+  > li > a {
+    color: @white;
+    font-weight: 700;
+
+    &:hover,
+    &:focus {
+      color: @white;
+      background: none;
+    }
+  }
+  > .selected > a {
+    &,
+    &:hover,
+    &:focus {
+      color: @white;
+    }
+  }
+  > .disabled > a {
+    &,
+    &:hover,
+    &:focus {
+      color: @navbar-default-link-disabled-color;
+      background-color: @navbar-default-link-disabled-bg;
+    }
+  }
+}
+
+
+
+// Brand/project name
+
+.navbar-brand {
+
+  img {
+    height: 24px;
+    max-width: 100%;
+  }
+}
+
